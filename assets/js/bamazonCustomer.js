@@ -51,8 +51,8 @@ function getCustomerInput() {
                                        }
     else if
               (answer.action === "QUIT") {
-              console.log("Total Amount of ALL purchases: " + (totalPurchases).trim());
-            
+              console.log("Total Amount of ALL purchases: " + (totalPurchases));
+              process.exit();            
                                         }
     
     else {
@@ -77,11 +77,18 @@ function getCustomerInput() {
      .then(function(answer) {
       let ID = parseInt(answer.id);      
       var query = "SELECT * FROM products WHERE Id= " + answer.id;
-      connection.query(query, { Id: answer.Id }, function(err, res) {       
+      connection.query(query, { Id: answer.Id }, function(err, res) {   
+        if (err){
+          console.log("Select error:" + query);      
+          console.log(err);
+          return;
+                }    
+        else{
 
          for (var i = 0; i < res.length; i++) {
            console.log("ID: " + res[i].Id + " || ProdName: " + res[i].ProdName + " || Price: " + res[i].Price);
                                                }
+              }
            getCustomerInput();
                                                                       })
                              });
@@ -107,8 +114,7 @@ function displayAllItems() {
                         }
 
 function buyProduct() {
-  let newQty= 1;
-  let Qty=10;
+  let newQty= 0;
   inquirer
     .prompt({
       name: "buyId",
@@ -131,43 +137,43 @@ function buyProduct() {
               type: "input",
               message: "Enter count of items to buy?"
                    })  .then(function(reply) {
-      if (parseInt(reply.buyCount) > parseInt(r[0].Qty)) {
-        console.log(r.Qty);
-        console.log(`Insufficient quantity!` + r[0].Qty);
-        return;
-                                                        }
-      else {
-          // console.log("Function buy--  answer: " + reply.buyCount + "  sql qty=  " + r[0].Qty);
-            //update quantity by count ordered    
-            let newQty= parseInt(r[0].Qty) - parseInt(reply.buyCount);
-  // console.log("function buy: " +  reply.buyCount + "  new  quantity: " + newQty);    
+                   
+                  if  (parseInt(reply.buyCount) > parseInt(r[0].Qty))                       {
+                        console.log(`Insufficient quantity!` + r[0].Qty);
+                       getCustomerInput();
+                         return;
+                      }
+                 else {
+                        //update quantity by count ordered    
+                      let newQty= parseInt(r[0].Qty) - parseInt(reply.buyCount);
+                              
+                      let query = 'UPDATE products SET Qty='+newQty+' WHERE ?';
+                      connection.query(query, {Id: answer.buyId} , function(err, responseUPD)  {
           
-          let query = 'UPDATE products SET Qty='+newQty+' WHERE ?';
-          connection.query(query, {Id: answer.buyId} , function(err, responseUPD)  {
-          
-            if (err){
-              console.log("ERROR");
-              console.log(err);
-              return;
-                    }
-          else 
-             {
-             console.log( "ID: " + answer.buyId + " updated from Quantity: "+ r[0].Qty + " to New Quantity: " + newQty); 
-             let totBought = ((parseFloat(r[0].Price) * parseInt(reply.buyCount))).toFixed(2);
-             console.log("Total Bought: " + totBought);
-            };
+                      if (err){
+                        console.log("ERROR");
+                        console.log(err);
+                        return;
+                              }
+                        else 
+                              {
+                              console.log( "ID: " + answer.buyId + " updated from Quantity: "+ r[0].Qty + " to New Quantity: " + newQty); 
+                              let totBought = ((parseFloat(r[0].Price) * parseInt(reply.buyCount))).toFixed(2);
+                              console.log("Total Bought: " + totBought);
+                              };
           totalPurchases += ((parseFloat(r[0].Price) * parseInt(reply.buyCount))).toFixed(2);
          
-          getCustomerInput();   
+          getCustomerInput();  
+                                                                                                 }); 
        
-                                                                                    }); 
-             };    
-                                                  });
+                         }; 
+             });    
+                  };
       
-                                                              };
-                                                                         });
-                                          });
+                                                                        });
+                                       });
+                       };
   
-};
+
 
 
