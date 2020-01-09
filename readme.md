@@ -1,4 +1,4 @@
-bAmazon
+bamazon
 sharon Story Smith
 Fall 2019
 Node.js & MySQL program
@@ -51,8 +51,3 @@ Customer Input:
    * Updates the SQL database to reflect the remaining quantity.
    * Displays the customer the total cost of their purchase.
 ​
-- - -
-​
-* If this activity took you between 8-10 hours, then you've put enough time into this assignment. Feel free to stop here -- unless you want to take on the next challenge.
-​
-how could you limit the number of characters a user can enter on the command line?
