@@ -18,7 +18,7 @@ Node.js & MySQL program
 
 
 Overview​
-This is an Amazon-like storefront. The app will take in orders from customers and deplete stock from the store's inventory.
+This is an Amazon-like storefront. The app will take in orders from customers and deplete stock from the store's inventory. this is a Command Line Interface (CLI) app.
                  ​
 ​
  A MySQL Database called `bamazon`.
