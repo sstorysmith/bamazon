@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-Amazon
-=======
 bamazon
->>>>>>> a9a810779c49730730b8baede82a3d34c6f53fe1
 sharon Story Smith
 Fall 2019
-Node.js & MySQL program
-
-<!-- <img width=“1097” alt=“bamazonPrintScreen.jpg”> -->
-
-<img width=“1097” alt=“bamazonPrintScreen.jpg” src=“bamazonPrintScreen.jpg”>
-
+Bootstrap, NodeJS, Gitbash terminal line, MYSQL
 
 
 ![automated demo of bamazon](.\assets\Images\bamazon.gif)
