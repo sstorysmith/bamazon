@@ -1,33 +1,39 @@
 bamazon
-sharon Story Smith
+sharon Story Smith    storysmithsharon@gmail.com
 Fall 2019
 Bootstrap, NodeJS, Gitbash terminal line, MYSQL
 
 
-![automated demo of bamazon](.\assets\Images\bamazon.gif)
+Screen Shot:  ![screen shot](.\assets\Images\ScreenShot.jpg)
 
+Working Demo:![demo of bamazon](.\assets\Images\bamazon.gif)
 
+Developer: 
+     - Install MySQL and create a database and table per:
+         A MySQL Database called `bamazon`.
+​
+         * A Table named `products`.
+​
+         * Id (Unique id for each product)
+      ​
+         * ProductName (Name of product)
+      ​
+         * Dept (Department)
+      ​
+         * Price (Cost to customer, floating point)
+      ​
+         * Qty (How much of the product is available in stores)
 
+        = See the list below for data used in this deployed app.
 
-Overview​
-This is an Amazon-like storefront. The app will take in orders from customers and deplete stock from the store's inventory. This is a Command Line Interface (CLI) app.
-                 ​
+     - Download code from Github, install node, 
+     - To run, goto the Bash Terminal line and enter: 
+          $ node bamazonCustomer.js
+
+Overview​:
+This is an Amazon-like storefront. The app will take in orders from a customer and remove stock from the store's inventory. All interaction is via the Command Line Interface (CLI).  
 ​
- A MySQL Database called `bamazon`.
-​
-   * A Table named `products`.
-​
-   * Id (unique id for each product)
-​
-   * ProductName (Name of product)
-​
-   * Dept (department)
-​
-   * Price (cost to customer, floating point)
-​
-   * Qty (how much of the product is available in stores)
-​
-This database is populated with these ID - Products. 
+=This database in the deployed app is populated with these IDs and Products: 
         10  coffee maker
         20  extension ladder
         30  seat covers 
@@ -40,8 +46,6 @@ This database is populated with these ID - Products.
         100 leather jacket
 
 ​
-To run, goto the Bash Terminal line and enter: 
-   $ node `bamazonCustomer.js`
 
 Terminal Line Input: 
    SEARCH prompts for an ID.
@@ -54,7 +58,11 @@ Terminal Line Input:
    * If there is not enough of quantity to supply the request, the  phrase
     `Insufficient quantity!` is logged. 
 ​
-   * However, if the store _does_ have enough of the product, the order is fulfilled. 
-   * Updates the SQL database to reflect the remaining quantity.
-   * Displays the customer the total cost of their purchase.
+         * However, if the store _does_ have enough of the product, the order is fulfilled. 
+                Updates the SQL database to reflect the remaining quantity.
+   * Displays total cost of the purchase.
+
+
+   App Design: This is designed to use MySQL and bamazonCustomer.js must be modified to work
+   with the user's installation and id/password.
 ​
