@@ -4,9 +4,9 @@ Fall 2019
 Bootstrap, NodeJS, Gitbash terminal line, MYSQL
 
 
-Screen Shot:  ![screen shot](.\assets\Images\ScreenShot.jpg)
+Screen Shot:  ![screen shot](.\ScreenShot.jpg)
 
-Working Demo:![demo of bamazon](.\assets\Images\bamazon.gif)
+Working Demo:![demo of bamazon](.\bamazon.gif)
 
 Developer: 
      - Install MySQL and create a database and table per:
