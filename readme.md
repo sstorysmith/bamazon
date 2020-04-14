@@ -4,27 +4,27 @@ Fall 2019
 Bootstrap, NodeJS, Gitbash terminal line, MYSQL
 
 
-Screen Shot:  ![screen shot](.\ScreenShot.jpg)
+Screen Shot:  ![screen shot](ScreenShot.jpg)
 
-Working Demo:![demo of bamazon](.\bamazon.gif)
+Working Demo:![demo of bamazon](bamazon.gif)
 
 Developer: 
      - Install MySQL and create a database and table per:
          A MySQL Database called `bamazon`.
 ​
-         * A Table named `products`.
+          A Table named `products`.
 ​
-         * Id (Unique id for each product)
+          Id (Unique id for each product)
       ​
-         * ProductName (Name of product)
+          ProductName (Name of product)
       ​
-         * Dept (Department)
+          Dept (Department)
       ​
-         * Price (Cost to customer, floating point)
+          Price (Cost to customer, floating point)
       ​
-         * Qty (How much of the product is available in stores)
+          Qty (How much of the product is available in stores)
 
-        = See the list below for data used in this deployed app.
+         See the list below for data used in this deployed app.
 
      - Download code from Github, install node, 
      - To run, goto the Bash Terminal line and enter: 
